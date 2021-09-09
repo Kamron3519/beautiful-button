@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #1e183b;
+}
+.container{
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.container .btn{
+    position: relative;
+    width: 155px;
+    height: 50px;
+    margin: 20px;
+
+}
+.container .btn a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    box-shadow: rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 400;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    backdrop-filter: blur(15px);
+}
+.container .btn:hover a{
+    letter-spacing: 3px;
+}
+.container .btn a::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+.container .btn:hover a::before{
+    transform:skewX(45deg) translateX(200%);
+}
+.container .btn::before{
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0;
+}
+.container .btn:hover::before{
+    bottom: 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+
+.container .btn::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0;
+}
+.container .btn:hover::after{
+    top: 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+.container .btn:nth-child(1):before,
+.container .btn:nth-child(1):after{
+    background: magenta;
+    box-shadow: 0 0 5px magenta,
+                0 0 15px magenta,
+                0 0 30px magenta,
+                0 0 60px magenta;
+}
+.container .btn:nth-child(2):before,
+.container .btn:nth-child(2):after{
+    background: aquamarine;
+    box-shadow: 0 0 5px aquamarine,
+                0 0 15px aquamarine,
+                0 0 30px aquamarine,
+                0 0 60px aquamarine;
+}
+.container .btn:nth-child(3):before,
+.container .btn:nth-child(3):after{
+    background: greenyellow;
+    box-shadow: 0 0 5px greenyellow,
+                0 0 15px greenyellow,
+                0 0 30px greenyellow,
+                0 0 60px greenyellow;
+}
